@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocketry & Aviation Club | IIT Patna</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&f[]=clash-display@600,700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Font Settings */
+        body { font-family: 'Satoshi', sans-serif; background-color: #030303; color: #ffffff; cursor: none; }
+        h1, h2, h3, .display-font { font-family: 'Clash Display', sans-serif; }
+        
+        /* Smooth Scroll Setup */
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+
+        /* Custom Cursor */
+        .cursor-dot, .cursor-outline {
+            position: fixed; top: 0; left: 0; transform: translate(-50%, -50%);
+            border-radius: 50%; z-index: 9999; pointer-events: none;
+        }
+        .cursor-dot { width: 8px; height: 8px; background-color: white; }
+        .cursor-outline { width: 40px; height: 40px; border: 1px solid rgba(255, 255, 255, 0.5); transition: width 0.2s, height 0.2s; }
+        
+        /* Utility */
+        .clip-text-image {
+            background-clip: text; -webkit-background-clip: text; color: transparent;
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference text-white">
+        <div class="flex items-center gap-4">
+            <img src="./src/Indian_Institute_of_Technology,_Patna.svg.png" alt="IIT Patna" class="h-12 w-auto">
+            <div class="h-8 w-[1px] bg-white"></div>
+            <!-- Replace with actual RNA Club logo -->
+            <img src="./src/RNA.png" alt="RNA Club" class="h-12 w-auto">
+            <!-- <img src="./src/RNA.png" alt="RNA Club" class="h-12 w-auto invert"> -->
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+            <a href="#" class="hover:text-gray-400 transition-colors">Mission</a>
+            <a href="#" class="hover:text-gray-400 transition-colors">Fleet</a>
+            <a href="#" class="hover:text-gray-400 transition-colors">Crew</a>
+        </div>
+        <button class="border border-white/20 px-6 py-2 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">Join Us</button>
+    </nav>
+
+    <section class="relative h-screen flex flex-col justify-center items-center overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale scale-110 hero-bg" alt="Rocket Texture">
+        </div>
+        
+        <div class="z-10 text-center space-y-4 mix-blend-difference">
+            <div class="overflow-hidden">
+                <p class="hero-subtitle text-sm md:text-base uppercase tracking-[0.5em] text-gray-300 translate-y-10 opacity-0">IIT Patna</p>
+            </div>
+            <div class="overflow-hidden">
+                <h1 class="hero-title text-6xl md:text-9xl font-semibold tracking-tight uppercase translate-y-full">
+                    ROCKETRY &<br/>AVIATION CLUB
+                </h1>
+            </div>
+            <div class="overflow-hidden">
+                <p class="hero-text text-gray-400 max-w-md mx-auto mt-6 translate-y-10 opacity-0">
+                    Pushing the boundaries of aerodynamics and propulsion. The Rocketry and Aviation Club.
+                </p>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+            <span class="text-[10px] uppercase tracking-widest">Scroll</span>
+            <div class="w-[1px] h-12 bg-white/50"></div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-20 bg-[#030303] relative z-20">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="reveal-text text-3xl md:text-6xl leading-[1.1] font-medium text-gray-400">
+                We are a collective of <span class="text-white">engineers</span>, <span class="text-white">physicists</span>, and <span class="text-white">dreamers</span> dedicated to the art of flight. From high-altitude sounding rockets to autonomous drones.
+            </h2>
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#050505] text-white">
+        <div class="px-6 md:px-12 mb-12 flex items-end justify-between border-b border-white/10 pb-8">
+            <h3 class="text-5xl md:text-7xl uppercase font-bold text-transparent stroke-text" style="-webkit-text-stroke: 1px rgba(255,255,255,0.3);">Projects</h3>
+            <span class="text-sm font-mono text-gray-500">2024 — 2026</span>
+        </div>
+
+        <div class="project-card group relative h-[60vh] w-full border-t border-white/10 flex flex-col md:flex-row items-center justify-between overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10 p-10 md:w-1/3">
+                <span class="text-xs text-blue-400 uppercase tracking-widest mb-2 block">Experimental</span>
+                <h4 class="text-4xl font-semibold mb-4">Icarus X-1</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Solid motor propulsion system achieving Mach 1.2 with custom avionics telemetry.</p>
+            </div>
+            <div class="md:w-1/2 h-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1541188495357-ad2dc89497a1?q=80&w=2071&auto=format&fit=crop" class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700" alt="Rocket">
+            </div>
+        </div>
+
+        <div class="project-card group relative h-[60vh] w-full border-t border-b border-white/10 flex flex-col md:flex-row items-center justify-between overflow-hidden cursor-pointer">
+            <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative z-10 p-10 md:w-1/3">
+                <span class="text-xs text-orange-400 uppercase tracking-widest mb-2 block">UAV Systems</span>
+                <h4 class="text-4xl font-semibold mb-4">Falcon Drone</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Autonomous surveillance UAV with thermal imaging and waypoint navigation.</p>
+            </div>
+            <div class="md:w-1/2 h-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1506947411487-a56738267384?q=80&w=2028&auto=format&fit=crop" class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700" alt="Drone">
+            </div>
+        </div>
+    </section>
+
+    <footer class="h-[70vh] bg-white text-black flex flex-col justify-between p-6 md:p-12 relative overflow-hidden">
+        <div class="flex justify-between items-start z-10">
+            <div>
+                <h5 class="uppercase text-sm tracking-widest font-bold mb-4">Location</h5>
+                <p class="text-2xl font-light">IIT Patna Campus,<br>Bihta, Bihar</p>
+            </div>
+            <div class="text-right">
+                <h5 class="uppercase text-sm tracking-widest font-bold mb-4">Socials</h5>
+                <ul class="space-y-2 text-xl underline decoration-gray-300">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="relative z-10 overflow-hidden">
+             <h2 class="text-[12vw] leading-[0.8] font-bold tracking-tighter uppercase text-center footer-text translate-y-full">
+                Launch Now
+            </h2>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script>
+        // 1. Initialize Lenis (Smooth Scroll)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            
+            // Dot follows instantly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            
+            // Outline follows with delay
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // 3. GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Loading Animation
+        const tl = gsap.timeline();
+
+        tl.to('.hero-title', {
+            y: 0,
+            duration: 1.5,
+            ease: "power4.out",
+            delay: 0.2
+        })
+        .to('.hero-subtitle', {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=1")
+        .to('.hero-text', {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.8")
+        .to('.hero-bg', {
+            scale: 1,
+            duration: 2,
+            ease: "power2.out"
+        }, "-=2");
+
+        // Manifesto Text Reveal
+        const textWords = document.querySelectorAll('.reveal-text');
+        
+        gsap.fromTo('.reveal-text', 
+            { opacity: 0.2, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: '.reveal-text',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: false
+                }
+            }
+        );
+
+        // Footer Text Reveal
+        gsap.to('.footer-text', {
+            y: 0,
+            duration: 1,
+            ease: "power4.out",
+            scrollTrigger: {
+                trigger: 'footer',
+                start: 'top 60%',
+            }
+        });
+        
+        // Parallax Effect for Images
+        gsap.utils.toArray('.project-card img').forEach(img => {
+            gsap.to(img, {
+                y: -50,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: img.parentElement,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
