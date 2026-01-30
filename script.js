@@ -123,7 +123,14 @@
                 end: "+=4000",
                 pin: true,
                 scrub: 1,
-                anticipatePin: 1
+                anticipatePin: 1,
+                onUpdate: (self) => {
+                    gsap.to("#scrolling-rocket", {
+                        rotation: self.direction === -1 ? 180 : 0,
+                        duration: 0.5,
+                        overwrite: "auto"
+                    });
+                }
             }
         });
 
@@ -169,3 +176,92 @@
                 start: 'top 60%',
             }
         });
+
+        // --- Our Progress Section Animation ---
+        const progressSection = document.querySelector('#our-progress');
+        if (progressSection) {
+            const progressEvents = document.querySelectorAll('.progress-event');
+            const yearMarkers = document.querySelectorAll('.year-marker');
+            const progressLine = document.querySelector('#progress-line');
+            
+            // Set initial states for events
+            gsap.set(progressEvents, { opacity: 0, y: 100, scale: 0.95, display: 'none' });
+
+            const totalEvents = progressEvents.length;
+            
+            // Main Timeline
+            const progressTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#our-progress",
+                    start: "top top",
+                    end: "+=6000", // Pinned for 6000px
+                    pin: true,
+                    scrub: 1,
+                    onUpdate: (self) => {
+                        // Update Bar Width
+                        const progress = self.progress;
+                        gsap.set(progressLine, { width: `${progress * 100}%` });
+
+                        // Update Markers based on progress slice
+                        // Divide progress 0-1 into 'totalEvents' segments
+                        const activeIndex = Math.min(Math.floor(progress * totalEvents), totalEvents - 1);
+                        
+                        yearMarkers.forEach((marker, idx) => {
+                            if (idx < activeIndex) {
+                                // Past
+                                gsap.to(marker, { 
+                                    scale: 1, 
+                                    backgroundColor: "#000", 
+                                    borderColor: "#fff", 
+                                    color: "#fff", 
+                                    duration: 0.3,
+                                    overwrite: 'auto'
+                                });
+                            } else if (idx === activeIndex) {
+                                // Current
+                                gsap.to(marker, { 
+                                    scale: 1.5, 
+                                    backgroundColor: "#fff", 
+                                    borderColor: "#fff", 
+                                    color: "#000", 
+                                    duration: 0.3,
+                                    overwrite: 'auto'
+                                });
+                            } else {
+                                // Future
+                                gsap.to(marker, { 
+                                    scale: 1, 
+                                    backgroundColor: "#000", 
+                                    borderColor: "rgba(255,255,255,0.2)", 
+                                    color: "#4b5563", 
+                                    duration: 0.3,
+                                    overwrite: 'auto'
+                                });
+                            }
+                        });
+                    }
+                }
+            });
+
+            progressEvents.forEach((event, i) => {
+                // Timeline Sequence
+                // 1. Enter
+                progressTl.set(event, { display: 'grid' }) // 'grid' because of Tailwind class
+                          .to(event, { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'back.out(1.7)' })
+                          
+                // 2. Hold (Duration determines how long it stays pinned vs scrolling to next)
+                          .to(event, { duration: 2 });
+                
+                // 3. Exit (except last item)
+                if (i < progressEvents.length - 1) {
+                    progressTl.to(event, { 
+                        opacity: 0, 
+                        y: -50, 
+                        scale: 0.9, 
+                        duration: 1, 
+                        ease: 'power2.in',
+                        display: 'none' 
+                    });
+                }
+            });
+        }
