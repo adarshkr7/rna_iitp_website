@@ -129,25 +129,46 @@
 
             let progress = { value: 0 };
             
-            gsap.to(progress, {
-                value: 100,
-                duration: 2.5,
-                ease: "power2.inOut",
+            // Start "fake" loading to 90%
+            const loadTween = gsap.to(progress, {
+                value: 90,
+                duration: 5,
+                ease: "power1.inOut",
                 onUpdate: () => {
                     preloaderText.textContent = Math.round(progress.value) + '%';
-                },
-                onComplete: () => {
-                    gsap.to(preloader, {
-                        y: '-100%',
-                        duration: 1,
-                        ease: "power4.inOut",
-                        onComplete: () => {
-                            preloader.style.display = 'none';
-                            tl.play(); // trigger hero animation
-                        }
-                    });
                 }
             });
+
+            function finishLoading() {
+                loadTween.kill();
+                
+                gsap.to(progress, {
+                    value: 100,
+                    duration: 0.5,
+                    onUpdate: () => {
+                        preloaderText.textContent = Math.round(progress.value) + '%';
+                    },
+                    onComplete: () => {
+                        gsap.to(preloader, {
+                            y: '-100%',
+                            duration: 1,
+                            ease: "power4.inOut",
+                            onComplete: () => {
+                                preloader.style.display = 'none';
+                                tl.play(); // trigger hero animation
+                            }
+                        });
+                    }
+                });
+            }
+
+            if (document.readyState === "complete") {
+                finishLoading();
+            } else {
+                window.addEventListener("load", finishLoading);
+                // Fallback (e.g., if load event fails to fire)
+                setTimeout(finishLoading, 10000);
+            }
         }
         
         startPreloader();
