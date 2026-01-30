@@ -95,7 +95,7 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
-        const tl = gsap.timeline();
+        const tl = gsap.timeline({ paused: true });
 
         tl.to('.hero-title', {
             y: 0,
@@ -115,6 +115,42 @@
             duration: 1,
             ease: "power3.out"
         }, "-=0.8");
+
+        // Preloader Logic
+        function startPreloader() {
+            const preloaderText = document.getElementById('preloader-text');
+            const preloader = document.querySelector('.preloader');
+
+            if (!preloaderText || !preloader) {
+                // If preloader elements are missing, just play hero animation
+                tl.play();
+                return;
+            }
+
+            let progress = { value: 0 };
+            
+            gsap.to(progress, {
+                value: 100,
+                duration: 2.5,
+                ease: "power2.inOut",
+                onUpdate: () => {
+                    preloaderText.textContent = Math.round(progress.value) + '%';
+                },
+                onComplete: () => {
+                    gsap.to(preloader, {
+                        y: '-100%',
+                        duration: 1,
+                        ease: "power4.inOut",
+                        onComplete: () => {
+                            preloader.style.display = 'none';
+                            tl.play(); // trigger hero animation
+                        }
+                    });
+                }
+            });
+        }
+        
+        startPreloader();
 
         const rocketTl = gsap.timeline({
             scrollTrigger: {
