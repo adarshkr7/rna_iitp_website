@@ -188,13 +188,14 @@
             gsap.set(progressEvents, { opacity: 0, y: 100, scale: 0.95, display: 'none' });
 
             const totalEvents = progressEvents.length;
+            const isMobile = window.innerWidth < 768;
             
             // Main Timeline
             const progressTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: "#our-progress",
                     start: "top top",
-                    end: "+=6000", // Pinned for 6000px
+                    end: isMobile ? "+=3000" : "+=6000", // Shorter scroll distance on mobile
                     pin: true,
                     scrub: 1,
                     onUpdate: (self) => {
