@@ -6,8 +6,9 @@
             let particles = [];
 
             function resizeCanvas() {
-                canvas.width = canvas.offsetWidth;
-                canvas.height = canvas.offsetHeight;
+                const rect = canvas.parentElement.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
                 initParticles();
             }
             window.addEventListener('resize', resizeCanvas);
@@ -452,8 +453,10 @@
 
       // Resize canvas.
       function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        const parent = canvas.parentElement;
+        const rect = parent.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
         gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
       }
       window.addEventListener('resize', resize);
