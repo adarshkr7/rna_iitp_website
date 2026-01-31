@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rocketry & Aviation Club | IIT Patna</title>
+    <link rel="icon" type="image/png" href="./src/RnALogo.svg">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -23,25 +24,25 @@
 
     <nav class="absolute top-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference text-white">
         <div class="flex items-center gap-4">
-            <img src="./src/RNA.png" alt="RNA Club" class="h-12 w-auto">
+            <img src="./src/RnALogo.svg" alt="RNA Club" class="h-12 w-auto invert">
         </div>
         <!-- <button class="border border-white/20 px-6 py-2 rounded-full text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">Join Us</button> -->
     </nav>
 
     <section class="relative h-screen flex flex-col justify-center items-center overflow-hidden bg-black" id="hero-section">
-        <canvas id="particle-canvas" class="absolute inset-0 z-0 w-full h-full opacity-60"></canvas>
+        <canvas id="glcanvas" class="absolute inset-0"></canvas>
 
-        <div class="z-10 text-center space-y-4 mix-blend-difference">
+        <div class="relative z-10 text-center space-y-4 mix-blend-difference">
             <div class="overflow-hidden">
-                <p class="hero-subtitle text-[0.60rem] uppercase tracking-[0.5em] text-gray-300 translate-y-10 opacity-0">Indian Institute of Technology Patna</p>
+                <p class="hero-subtitle text-[0.60rem] uppercase tracking-[0.5em] text-white drop-shadow-lg">Indian Institute of Technology Patna</p>
             </div>
             <div class="overflow-hidden">
-                <h1 class="hero-title text-6xl md:text-9xl font-bold tracking-tighter uppercase translate-y-full clip-text-image">
+                <h1 class="hero-title text-6xl md:text-9xl font-bold tracking-tighter uppercase translate-y-full text-white drop-shadow-2xl">
                     ROCKETRY &<br/>AVIATION <span class="md:ml-8">CLUB</span>
                 </h1>
             </div>
             <div class="overflow-hidden">
-                <p class="hero-text text-[0.7rem] text-gray-400 max-w-md mx-auto mt-6 translate-y-10 opacity-0">
+                <p class="hero-text text-[0.7rem] text-white max-w-md mx-auto mt-6 drop-shadow-lg">
                     Pushing the boundaries of aerodynamics and propulsion.
                 </p>
             </div>
@@ -77,7 +78,7 @@
                 </h2>
             </div>
             <div class="relative overflow-hidden group">
-                 <img src="./src/srcn/cc.jpeg" alt="Team RNA" class="w-[400px] h-auto object-cover transform transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale-0 hover:grayscale">
+                 <img src="./src/srcn/cc.jpeg" loading="lazy" alt="Team RNA" class="w-[400px] h-auto object-cover transform transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale-0 hover:grayscale">
             </div>
         </div>
     </section>
@@ -93,37 +94,37 @@
                 <!-- 1. Tall (Left) -->
                 <div class="md:col-span-1 md:row-span-2 group relative overflow-hidden bg-gray-900 rounded-sm border border-white/5">
                      <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-widest z-10 border border-white/10">METAL ADDITIVE MANUFACTURING</div>
-                     <img src="./src/noz1.png" alt="Work 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
+                     <img src="./src/noz1.png" loading="lazy" alt="Work 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
                 </div>
 
                 <!-- 2. Wide (Top Middle) -->
                 <div class="md:col-span-2 md:row-span-1 group relative overflow-hidden bg-gray-900 rounded-sm border border-white/5">
                      <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-widest z-10 border border-white/10">PCB DESIGNING</div>
-                     <img src="./src/pcb1.png" alt="Work 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
+                     <img src="./src/pcb1.png" loading="lazy" alt="Work 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
                 </div>
 
                 <!-- 3. Tall (Right) -->
                 <div class="md:col-span-1 md:row-span-2 group relative overflow-hidden bg-gray-900 rounded-sm border border-white/5">
                      <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-widest z-10 border border-white/10">PROPULSION SYSTEM</div>
-                     <img src="./src/prop1.png" alt="Work 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
+                     <img src="./src/prop1.png" loading="lazy" alt="Work 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
                 </div>
 
                 <!-- 4. Wide (Middle) -->
                 <div class="md:col-span-2 md:row-span-1 group relative overflow-hidden bg-gray-900 rounded-sm border border-white/5">
                      <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-widest z-10 border border-white/10">CAD</div>
-                     <img src="./src/prop2.png" alt="Work 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
+                     <img src="./src/prop2.png" loading="lazy" alt="Work 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
                 </div>
 
                 <!-- 5. Wide (Bottom Left) -->
                 <div class="md:col-span-2 md:row-span-1 group relative overflow-hidden bg-gray-900 rounded-sm border border-white/5">
                      <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-widest z-10 border border-white/10">PCB SCHEMATIC</div>
-                     <img src="./src/schematic.jpeg" alt="Work 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
+                     <img src="./src/schematic.jpeg" loading="lazy" alt="Work 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
                 </div>
 
                 <!-- 6. Wide (Bottom Right) -->
                 <div class="md:col-span-2 md:row-span-1 group relative overflow-hidden bg-gray-900 rounded-sm border border-white/5">
                      <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 text-[10px] uppercase tracking-widest z-10 border border-white/10">LAUNCH</div>
-                     <img src="./src/srcn/IMG_3232.JPG.jpeg" alt="Work 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
+                     <img src="./src/srcn/IMG_3232.JPG.jpeg" loading="lazy" alt="Work 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0">
                 </div>
 
             </div>
@@ -150,12 +151,11 @@
                  <div id="progress-line" class="absolute left-0 h-[2px] bg-white top-1/2 -translate-y-1/2 transition-all duration-100 ease-linear w-0"></div>
 
                  <!-- Year Markers -->
-                 <div class="year-marker relative z-10 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-neutral-950 rounded-full text-[0.5rem] md:text-xs text-gray-600 font-bold border border-white/10 transition-all duration-300" data-year="2019">19</div>
-                 <div class="year-marker relative z-10 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-neutral-950 rounded-full text-[0.5rem] md:text-xs text-gray-600 font-bold border border-white/10 transition-all duration-300" data-year="2020">20</div>
+                 <div class="year-marker relative z-10 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-neutral-950 rounded-full text-[0.5rem] md:text-xs text-gray-600 font-bold border border-white/10 transition-all duration-300" data-year="2019">18</div>
                  <div class="year-marker relative z-10 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-neutral-950 rounded-full text-[0.5rem] md:text-xs text-gray-600 font-bold border border-white/10 transition-all duration-300" data-year="2021">21</div>
                  <div class="year-marker relative z-10 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-neutral-950 rounded-full text-[0.5rem] md:text-xs text-gray-600 font-bold border border-white/10 transition-all duration-300" data-year="2022">22</div>
-                 <div class="year-marker relative z-10 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-neutral-950 rounded-full text-[0.5rem] md:text-xs text-gray-600 font-bold border border-white/10 transition-all duration-300" data-year="2023">23</div>
-                 <div class="year-marker relative z-10 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-neutral-950 rounded-full text-[0.5rem] md:text-xs text-gray-600 font-bold border border-white/10 transition-all duration-300" data-year="2024">24</div>
+                 <div class="year-marker relative z-10 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-neutral-950 rounded-full text-[0.5rem] md:text-xs text-gray-600 font-bold border border-white/10 transition-all duration-300" data-year="2023">25</div>
+                 <div class="year-marker relative z-10 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-neutral-950 rounded-full text-[0.5rem] md:text-xs text-gray-600 font-bold border border-white/10 transition-all duration-300" data-year="2026">26</div>
             </div>
         </div>
 
@@ -163,12 +163,12 @@
         <!-- Center container that will hold absolute slides or be a long scrollable list -->
         <div id="progress-content" class="w-full h-full relative flex items-center justify-center translate-y-12 md:translate-y-16">
             
-            <!-- 2019 -->
-            <div class="progress-event absolute w-full max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center opacity-0 translate-y-10" data-year="2019">
+            <!-- 2023 -->
+            <div class="progress-event absolute w-full max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center opacity-0 translate-y-10" data-year="2023">
                  <div class="order-2 md:order-1 text-left md:text-right space-y-4">
-                     <span class="text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/10 opacity-20 absolute -top-20 right-1/2 translate-x-1/2 md:translate-x-0 md:right-10 md:top-auto z-0 select-none">2019</span>
+                     <span class="text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/10 opacity-20 absolute -top-20 right-1/2 translate-x-1/2 md:translate-x-0 md:right-10 md:top-auto z-0 select-none">2023</span>
                      <div class="relative z-10">
-                        <span class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-2 block">August 15, 2019</span>
+                        <span class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-2 block">August 15, 2018</span>
                         <h3 class="text-4xl md:text-6xl font-bold uppercase">Inception</h3>
                      </div>
                      <p class="text-gray-400 text-lg max-w-md ml-auto relative z-10">
@@ -176,24 +176,7 @@
                      </p>
                  </div>
                  <div class="order-1 md:order-2 relative h-[300px] md:h-[400px] overflow-hidden rounded-lg border border-white/10">
-                     <img src="./src/srcn/vig.png" alt="2019 Inception" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-                 </div>
-            </div>
-
-            <!-- 2020 -->
-            <div class="progress-event absolute w-full max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center opacity-0 translate-y-10" data-year="2020">
-                 <div class="order-2 md:order-1 relative h-[300px] md:h-[400px] overflow-hidden rounded-lg border border-white/10">
-                     <img src="./src/noz1.png" alt="2020 First Design" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-                 </div>
-                 <div class="order-1 md:order-2 text-left space-y-4">
-                     <span class="text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/10 opacity-20 absolute -top-20 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-10 md:top-auto z-0 select-none">2020</span>
-                     <div class="relative z-10">
-                        <span class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-2 block">March 10, 2020</span>
-                        <h3 class="text-4xl md:text-6xl font-bold uppercase">First Design</h3>
-                     </div>
-                     <p class="text-gray-400 text-lg max-w-md relative z-10">
-                        Completed the aerodynamic design and simulation of our first sounding rocket, focusing on stability and drag reduction.
-                     </p>
+                     <img src="./src/clg.jpeg" loading="lazy" alt="2023 Inception" class="w-full h-full object-cover transition-all duration-700">
                  </div>
             </div>
 
@@ -210,14 +193,14 @@
                      </p>
                  </div>
                  <div class="order-1 md:order-2 relative h-[300px] md:h-[400px] overflow-hidden rounded-lg border border-white/10">
-                     <img src="./src/pcb1.png" alt="2021 Avionics" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                     <img src="./src/pcb1.png" loading="lazy" alt="2021 Avionics" class="w-full h-full object-cover hover:grayscale transition-all duration-700">
                  </div>
             </div>
 
             <!-- 2022 -->
             <div class="progress-event absolute w-full max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center opacity-0 translate-y-10" data-year="2022">
                  <div class="order-2 md:order-1 relative h-[300px] md:h-[400px] overflow-hidden rounded-lg border border-white/10">
-                     <img src="./src/prop1.png" alt="2022 Propulsion" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                     <img src="./src/prop1.png" loading="lazy" alt="2022 Propulsion" class="w-full h-full object-cover hover:grayscale transition-all duration-700">
                  </div>
                  <div class="order-1 md:order-2 text-left space-y-4">
                      <span class="text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/10 opacity-20 absolute -top-20 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-10 md:top-auto z-0 select-none">2022</span>
@@ -231,36 +214,36 @@
                  </div>
             </div>
 
-            <!-- 2023 -->
-            <div class="progress-event absolute w-full max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center opacity-0 translate-y-10" data-year="2023">
+            <!-- 2025 -->
+            <div class="progress-event absolute w-full max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center opacity-0 translate-y-10" data-year="2025">
                  <div class="order-2 md:order-1 text-left md:text-right space-y-4">
-                     <span class="text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/10 opacity-20 absolute -top-20 right-1/2 translate-x-1/2 md:translate-x-0 md:right-10 md:top-auto z-0 select-none">2023</span>
+                     <span class="text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/10 opacity-20 absolute -top-20 right-1/2 translate-x-1/2 md:translate-x-0 md:right-10 md:top-auto z-0 select-none">2025</span>
                      <div class="relative z-10">
-                        <span class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-2 block">November 23, 2023</span>
+                        <span class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-2 block">April 18, 2025</span>
                         <h3 class="text-4xl md:text-6xl font-bold uppercase">Launch</h3>
                      </div>
                      <p class="text-gray-400 text-lg max-w-md ml-auto relative z-10">
-                        Executed a successful test launch, validating our recovery systems and payload integration mechanisms.
+                        Meet Taara. Our club's first baby bird. She's dramatic but still a beast
                      </p>
                  </div>
                  <div class="order-1 md:order-2 relative h-[300px] md:h-[400px] overflow-hidden rounded-lg border border-white/10">
-                     <img src="./src/srcn/IMG_3232.JPG.jpeg" alt="2023 Launch" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                     <img src="./src/srcn/tara.heic" loading="lazy" alt="2025 Launch" class="w-full h-full object-cover hover:grayscale transition-all duration-700">
                  </div>
             </div>
 
-            <!-- 2024 -->
-            <div class="progress-event absolute w-full max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center opacity-0 translate-y-10" data-year="2024">
+            <!-- 2026 -->
+            <div class="progress-event absolute w-full max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center opacity-0 translate-y-10" data-year="2026">
                  <div class="order-2 md:order-1 relative h-[300px] md:h-[400px] overflow-hidden rounded-lg border border-white/10">
-                     <img src="./src/schematic.jpeg" alt="2024 Innovation" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                     <img src="./src/srcn/prop.jpeg" loading="lazy" alt="2026 Innovation" class="w-full h-full object-cover hover:grayscale transition-all duration-700">
                  </div>
                  <div class="order-1 md:order-2 text-left space-y-4">
-                     <span class="text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/10 opacity-20 absolute -top-20 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-10 md:top-auto z-0 select-none">2024</span>
+                     <span class="text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/10 opacity-20 absolute -top-20 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-10 md:top-auto z-0 select-none">2026</span>
                      <div class="relative z-10">
-                        <span class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-2 block">January 26, 2024</span>
+                        <span class="text-amber-500 text-sm font-bold tracking-widest uppercase mb-2 block">January 16, 2026</span>
                         <h3 class="text-4xl md:text-6xl font-bold uppercase">Innovation</h3>
                      </div>
                      <p class="text-gray-400 text-lg max-w-md relative z-10">
-                        Expanding into hybrid propulsion and advanced drone swarms for autonomous missions.
+                        We successfully performed our 4th static fire test, utilizing an in-house built KNDX propellant and thermal insulation system. The I-class solid rocket motor achieved a total impulse of 480 Ns, reflecting steady progress in propulsion development for our rockets.
                      </p>
                  </div>
             </div>
@@ -268,7 +251,7 @@
         </div>
     </section>
 
-   <footer class="h-screen flex flex-col justify-between p-6 md:p-12 relative overflow-hidden text-white" id="contact">
+   <footer class="h-screen flex flex-col justify-between p-6 md:p-12 pb-0 md:pb-0 relative overflow-hidden text-white" id="contact">
 
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
         
@@ -296,10 +279,17 @@
         </div>
     </div>
 
-    <div class="relative z-10 overflow-hidden">
-        <h2 class="text-[12vw] leading-[0.8] font-bold tracking-tighter uppercase text-center footer-text translate-y-full">
-            Launch Now
-        </h2>
+    <div class="relative z-10 w-full flex flex-col items-center">
+        <div class="overflow-hidden w-full">
+            <h2 class="text-[12vw] leading-[0.8] font-bold tracking-tighter uppercase text-center footer-text translate-y-full">
+                Launch Now
+            </h2>
+        </div>
+        <div class="mt-2 md:mt-4 pb-4">
+            <p class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest text-center">
+                &copy; 2026 Rocketry & Aviation Club, IIT Patna. All rights reserved.
+            </p>
+        </div>
     </div>
 </footer>
 

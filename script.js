@@ -129,46 +129,25 @@
 
             let progress = { value: 0 };
             
-            // Start "fake" loading to 90%
-            const loadTween = gsap.to(progress, {
-                value: 90,
-                duration: 5,
-                ease: "power1.inOut",
+            gsap.to(progress, {
+                value: 100,
+                duration: 2.5,
+                ease: "power2.inOut",
                 onUpdate: () => {
                     preloaderText.textContent = Math.round(progress.value) + '%';
+                },
+                onComplete: () => {
+                    gsap.to(preloader, {
+                        y: '-100%',
+                        duration: 1,
+                        ease: "power4.inOut",
+                        onComplete: () => {
+                            preloader.style.display = 'none';
+                            tl.play(); // trigger hero animation
+                        }
+                    });
                 }
             });
-
-            function finishLoading() {
-                loadTween.kill();
-                
-                gsap.to(progress, {
-                    value: 100,
-                    duration: 0.5,
-                    onUpdate: () => {
-                        preloaderText.textContent = Math.round(progress.value) + '%';
-                    },
-                    onComplete: () => {
-                        gsap.to(preloader, {
-                            y: '-100%',
-                            duration: 1,
-                            ease: "power4.inOut",
-                            onComplete: () => {
-                                preloader.style.display = 'none';
-                                tl.play(); // trigger hero animation
-                            }
-                        });
-                    }
-                });
-            }
-
-            if (document.readyState === "complete") {
-                finishLoading();
-            } else {
-                window.addEventListener("load", finishLoading);
-                // Fallback (e.g., if load event fails to fire)
-                setTimeout(finishLoading, 10000);
-            }
         }
         
         startPreloader();
@@ -194,17 +173,17 @@
         rocketTl
             .fromTo("#scrolling-rocket",
                 { y: "120vh", scale: 0.5, opacity: 0 },
-                { y: "0%", scale: 1, opacity: 1, duration: 2, ease: "power2.out" }
+                { y: "0%", scale: 1, opacity: 1, duration: 1, ease: "power2.out" }
             )
             .to("#scrolling-rocket", {
                 scale: 1.4,
-                duration: 6,
+                duration: 2,
                 ease: "none"
             })
             .to("#scrolling-rocket", {
                 y: "-150vh",
                 scale: 1.2,
-                duration: 2,
+                duration: 1,
                 ease: "power2.in"
             });
 
@@ -213,7 +192,7 @@
             {
                 opacity: 1,
                 y: 0,
-                duration: 1,
+                duration: 0.5,
                 stagger: 0.1,
                 scrollTrigger: {
                     trigger: '.reveal-text',
@@ -226,7 +205,7 @@
 
         gsap.to('.footer-text', {
             y: 0,
-            duration: 1,
+            duration: 0.5,
             ease: "power4.out",
             scrollTrigger: {
                 trigger: 'footer',
