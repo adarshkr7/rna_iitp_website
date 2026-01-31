@@ -139,3 +139,15 @@
             min-height: 100vh;
           }
         }
+
+        .hero-title {
+          max-width: 90vw;
+          line-height: 1;
+        }
+
+        @media (max-width: 640px) {
+          .hero-title {
+            max-width: 85vw;
+            letter-spacing: -0.02em;
+          }
+        }
